@@ -14,4 +14,6 @@ crash.log
 #
 # example.tfvars
 
+node_modules
 dev_vars.tf
+.serverless
