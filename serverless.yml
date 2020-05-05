@@ -9,7 +9,7 @@ frameworkVersion: ">=1.0.0 <2.0.0"
 
 provider:
   name: aws
-  region: us-east-1
+  region: us-east-2
   runtime: nodejs10.x
   tags:
     projeto: consorciei
@@ -17,14 +17,14 @@ provider:
   memorySize: 128
   versionFunctions: false
   deploymentBucket:
-    name: deployments-consorciei
+    name: consorciei-lambdas
 
 functions:
-  # authMiddleware:
-  #   handler: authMiddleware/index.handler
-  #   name: ${self:provider.stage}-${self:service.name}-authMiddleware
-  #   description: Request authorizer.
-  #   timeout: 30
-  #   package:
-  #     include:
-  #       - authMiddleware/**
+  authMiddleware:
+    handler: authMiddleware/index.handler
+    name: ${self:provider.stage}-${self:service.name}-authMiddleware
+    description: Request middleware authorizer
+    timeout: 30
+    package:
+      include:
+        - authMiddleware/**

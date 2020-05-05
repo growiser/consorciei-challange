@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-2"
 }
 
 #############
@@ -69,12 +69,13 @@ resource "aws_security_group" "app_servers" {
 ############################
 # s3Bucket (Store Lambda deployments)
 ############################
-resource "aws_s3_bucket" "b" {
-  bucket = "deployments-consorciei"
-  acl    = "private"
+resource "aws_s3_bucket" "mainbucket" {
+  bucket        = "consorciei-lambdas"
+  acl           = "private"
+  force_destroy = true
 
   tags          = {
-    Name        = "deployments-consorciei"
+    Name        = "Deploy Lambdas"
     Environment = "Dev"
   }
 }
