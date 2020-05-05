@@ -66,6 +66,18 @@ resource "aws_security_group" "app_servers" {
   vpc_id       = data.aws_vpc.default.id
 } 
 
+############################
+# s3Bucket (Store Lambda deployments)
+############################
+resource "aws_s3_bucket" "b" {
+  bucket = "deployments-consorciei"
+  acl    = "private"
+
+  tags          = {
+    Name        = "deployments-consorciei"
+    Environment = "Dev"
+  }
+}
 
 ############################
 # SSM Parameters (Used to share key:values with Serverless)

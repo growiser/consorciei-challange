@@ -1,0 +1,30 @@
+service: 
+  name: consorciei
+package:
+  individually: true
+  exclude:
+    - ./**
+
+frameworkVersion: ">=1.0.0 <2.0.0"
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: nodejs10.x
+  tags:
+    projeto: consorciei
+  stage: ${opt:stage, 'dev'}
+  memorySize: 128
+  versionFunctions: false
+  deploymentBucket:
+    name: deployments-consorciei
+
+functions:
+  # authMiddleware:
+  #   handler: authMiddleware/index.handler
+  #   name: ${self:provider.stage}-${self:service.name}-authMiddleware
+  #   description: Request authorizer.
+  #   timeout: 30
+  #   package:
+  #     include:
+  #       - authMiddleware/**
