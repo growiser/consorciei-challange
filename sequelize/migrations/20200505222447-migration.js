@@ -23,7 +23,10 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true
       },
-      username: Sequelize.STRING,
+      username: {
+        type: Sequelize.STRING,
+        unique: true
+      },
       hashed_password: Sequelize.STRING
     })
   

@@ -28,3 +28,26 @@ functions:
     package:
       include:
         - authMiddleware/**
+
+  createUser:
+    handler: createUser/index.handler
+    name: ${self:provider.stage}-${self:service.name}-createUser
+    description: Create new User
+    timeout: 30
+    events:
+      - http:
+         path: user
+         method: post
+         authorizer: authMiddleware
+         cors:
+           origin: '*'
+         integration: lambda
+
+    package:
+      include:
+        - createUser/**
+    environment:
+      DB_HOST: ${ssm:DB_HOST}
+      DB_USER: ${ssm:DB_USER}
+      DB_PASSWORD: ${ssm:DB_PASSWORD}
+      DB_DATABASE: ${ssm:DB_DATABASE}
