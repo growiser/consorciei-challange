@@ -110,10 +110,3 @@ resource "aws_ssm_parameter" "db_database" {
   type  = "String"
   value = "${module.aurora.this_rds_cluster_database_name}"
 }
-
-resource "null_resource" "setup_db" {
-  depends_on = ["module.aurora"] #wait for the db to be ready
-  provisioner "local-exec" {
-    command = "mysql -u ${module.aurora.this_rds_cluster_master_username} -p${module.aurora.this_rds_cluster_master_password} -h ${aws_db_instance.my_db.address} < file.sql"
-  }
-}
