@@ -87,7 +87,7 @@ resource "aws_s3_bucket" "mainbucket" {
 resource "aws_ssm_parameter" "db_host" {
   name  = "DB_HOST"
   type  = "String"
-  value = "${module.aurora.this_rds_cluster_endpoint}"
+  value = "${module.aurora.this_rds_cluster_instance_endpoints[0]}"
 }
 
 # DB User

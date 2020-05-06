@@ -2,17 +2,22 @@
 # Endpoints Aurora 
 ############################
 # Cluster Endpoint
-output "this_rds_cluster_endpoint" {
-  description = "The cluster endpoint"
-  value       = module.aurora.this_rds_cluster_endpoint
-}
+# output "this_rds_cluster_endpoint" {
+#   description = "The cluster endpoint"
+#   value       = module.aurora.this_rds_cluster_endpoint
+# }
 
 # Reader Endpoint
-output "this_rds_cluster_reader_endpoint" {
-  description = "The cluster reader endpoint"
-  value       = module.aurora.this_rds_cluster_reader_endpoint
-}
+# output "this_rds_cluster_reader_endpoint" {
+#   description = "The cluster reader endpoint"
+#   value       = module.aurora.this_rds_cluster_reader_endpoint
+# }
 
+# Cluster Instance
+output "this_rds_cluster_instance_endpoints" {
+  description = "A list of all cluster instance endpoints"
+  value       = module.aurora.this_rds_cluster_instance_endpoints
+}
 
 
 
@@ -50,24 +55,4 @@ output "this_security_group_id" {
 
 
 
-############################
-# Other Aurora Instances
-############################
-# Cluster ID
-output "this_rds_cluster_id" {
-  description = "The ID of the cluster"
-  value       = module.aurora.this_rds_cluster_id
-}
-
-# Cluster Resource ID
-output "this_rds_cluster_resource_id" {
-  description = "The Resource ID of the cluster"
-  value       = module.aurora.this_rds_cluster_resource_id
-}
-
-# Cluster Instance
-output "this_rds_cluster_instance_endpoints" {
-  description = "A list of all cluster instance endpoints"
-  value       = module.aurora.this_rds_cluster_instance_endpoints
-}
 
