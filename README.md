@@ -70,7 +70,7 @@ npm i --save sequelize mysql2
 
 2) Configurar arquivo de conexão com o Banco (`config/config.json`)
  ```JSON
- # config/config_db.tf
+ # config/config.json
  
  {
   "development": {
