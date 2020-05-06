@@ -109,4 +109,18 @@ sls deploy
 
 E com isso, nossa aplicação está no ar! Essa é a mágica da [IaC](https://danieldonda.com/2018/04/17/infra-as-code-iac/). Com poucos comandos, foi possível subir uma aplicação inteiramente na Cloud! Leia abaixo mais especificações a respeito de Lambdas, grupos e acesso e outras informações.
 
+## Grupos de Acesso e funções Lambda
 
+| Função Lambda | Descrição | Required Acess Group |
+| --- | --- | --- | 
+| authMiddleware | Responsável por realizar gerar/negar permissões de acesso para outras funções | null
+| /login | Retornar um Token de acesso contendo as informações do usuário, futuramente usado para funções que necessitem de autenticação | null
+| /user | Criar um novo usuário, inserir as informações no banco de dados | User manager (ID 1)
+
+## Usuário Padrão
+Usuário temporário gerado a partir da seed visto que, para registrar novos usuários (`Lambda /user`), é necessário que o requisitante tenha o grupo de acesso `User manager (ID 1)`. Por isso, a partir desse usuário, é possível `realizar o login`, obter o `Token` e acessar a função para gerar novos usuários.
+
+| Username | Password | Access Group | Give Access To
+| --- | --- | --- | -- |
+| user-manager | default | User manager (ID 1) | Lambda /user
+> Com esse usuário é possível gerar outros users, e posteriormente, deletar por motivos de segurança este usuário padrão.
