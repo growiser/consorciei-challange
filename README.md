@@ -126,6 +126,8 @@ Usuário temporário gerado a partir da seed. Visto que para registrar novos usu
 > Com esse usuário é possível gerar outros users, e posteriormente, deletar por motivos de segurança, este usuário padrão.
 
 # Postman Collection para testes de Endpoints
+![postman-logo text-320x132](https://user-images.githubusercontent.com/4249709/29496848-63ad446c-85b1-11e7-904e-a4ddad25e9db.png)
+
 Afim de não estender demasiadamente esta documentação e por conta da alta disponibilidades de recursos oferecidos pelo [Postman](https://www.postman.com), todas as especificações/requerimentos dos endpoints estão disponibilizados no arquivo `postman-collection.json` na raiz do projeto.
 
 A aplicação suportaria novas funcionalidades de forma escalável e organizada. Foi um desafio muito interessante no qual dediquei alguns dias de pesquisa.
