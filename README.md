@@ -131,3 +131,5 @@ Usuário temporário gerado a partir da seed. Visto que para registrar novos usu
 Afim de não estender demasiadamente esta documentação e por conta da alta disponibilidades de recursos oferecidos pelo [Postman](https://www.postman.com), todas as especificações/requerimentos dos endpoints estão disponibilizados no arquivo `postman-collection.json` na raiz do projeto.
 
 A aplicação suportaria novas funcionalidades de forma escalável e organizada. Foi um desafio muito interessante no qual dediquei alguns dias de pesquisa.
+
+See you soon!
