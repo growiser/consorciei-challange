@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken")
 
 const authConfig = require("../config/auth")
 
-function validateToken(token) {
+async function validateToken(token) {
     let result = {
         success: true,
         error: null,
