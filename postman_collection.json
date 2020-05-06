@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "c5e6caa9-0c79-4dc3-add8-2a377cc97056",
+		"name": "Consorciei",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgsImFjY2Vzc19ncm91cF9pZCI6WzEsMl0sImlhdCI6MTU4ODc4NDc5MywiZXhwIjoxNTg4Nzg4MzkzfQ.xq3tLjneWbRMD9IaLpDy_Twf8MBaGRMVkOuXcQT-6CA",
+						"description": "Header utilizado para passar o Token de autenticação (será analisado no authMiddleware)",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"user-manager\",\n\t\"password\":\"default\",\n\t\"access_ids\":[1]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://1590jb7nkk.execute-api.us-east-2.amazonaws.com/dev/user",
+					"protocol": "https",
+					"host": [
+						"1590jb7nkk",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"user"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "Criar um novo usuário, inserir as informações no banco de dados"
+			},
+			"response": [
+				{
+					"name": "/user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgsImFjY2Vzc19ncm91cF9pZCI6WzEsMl0sImlhdCI6MTU4ODc4NDc5MywiZXhwIjoxNTg4Nzg4MzkzfQ.xq3tLjneWbRMD9IaLpDy_Twf8MBaGRMVkOuXcQT-6CA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"test-user\",\n\t\"password\":\"password-default\",\n\t\"access_ids\":[1]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://1590jb7nkk.execute-api.us-east-2.amazonaws.com/dev/user",
+							"protocol": "https",
+							"host": [
+								"1590jb7nkk",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"user"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 06 May 2020 21:33:02 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "9c33f596-1b7b-416a-9ca4-a6ee6405163d"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "MIP3_HtniYcFeHw="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-5eb32cff-3546e1d086ddd914dd6dd5c0;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 b5b315733c8c20a191b0fb8125e69bb8.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "GIG51-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "B9SDDyoX_tmN2evDB6k_c1ENi_meQxJPCOMFEtQaZVv3_MPJW2zcGw=="
+						}
+					],
+					"cookie": [],
+					"body": "\"User and permissions successfully created\""
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"user-manager\",\n\t\"password\":\"default\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://1590jb7nkk.execute-api.us-east-2.amazonaws.com/dev/login",
+					"protocol": "https",
+					"host": [
+						"1590jb7nkk",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"login"
+					]
+				},
+				"description": "Retornar um Token de acesso contendo as informações do usuário, futuramente usado para funções que necessitem de autenticação"
+			},
+			"response": [
+				{
+					"name": "/login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"user-manager\",\n\t\"password\":\"default\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://1590jb7nkk.execute-api.us-east-2.amazonaws.com/dev/login",
+							"protocol": "https",
+							"host": [
+								"1590jb7nkk",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "250"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 06 May 2020 21:41:59 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "014d7411-c6ed-4401-a0b4-12221f380433"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "MIRN9FaMCYcFgcw="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-5eb32f26-b56d2c58902153207ac6fd90;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 c93d4ed7938cd391613a13e7dd8ed2ec.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "GIG51-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "pPKg8BZAR4w1R8hu43G4QT5XrBTrUDN-q1pRrEHiwpMaukr6EI7Hmg=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"status_code\": 200,\n    \"user\": {\n        \"id\": 1,\n        \"access_group_id\": [\n            1\n        ],\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiYWNjZXNzX2dyb3VwX2lkIjpbMV0sImlhdCI6MTU4ODgwMTMxOSwiZXhwIjoxNTg4ODA0OTE5fQ.9SOYNIq3hfxafuMouR1C3lhRhVzZRTvcWHSjQfGznuA\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
