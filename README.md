@@ -90,7 +90,7 @@ npm i --save sequelize mysql2
  ```console
 npx sequelize-cli db:migrate
 ```
-> Irá criar as tabelas e relacionamentos do banco dedos
+> Irá criar as tabelas e relacionamentos do banco de dados
 
 4) Executar os seeders (`executar via console na raiz do projeto`)
  ```console
