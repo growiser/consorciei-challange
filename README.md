@@ -60,13 +60,13 @@ NOTE: O Endpoint de acesso (host) do Aurora retornado no output será necessári
 
 
 ## 2. Migração de tabelas e população do banco de dados
-Iremos utilizar o [Sequelize](https://sequelize.org) para realizar as migrações (criar as tabelas e relacionamentos no Aurora) e semear (inserir os grupos de acesso e usuários iniciais) o banco de dados. [Ler mais sobre migrations](https://sequelize.org/master/manual/migrations.html)
+Já com a infraestrutura montada, iremos utilizar o [Sequelize](https://sequelize.org) para realizar as migrações (criar as tabelas e relacionamentos no Aurora) e semear (inserir os grupos de acesso e usuários iniciais) o banco de dados. [Ler mais sobre migrations](https://sequelize.org/master/manual/migrations.html)
 
-1) Instalar o Sequelize na raiz do projeto
+1) Instalar o Sequelize e Mysql2 (`executar via console na raiz do projeto`)
  ```console
-npm i --save sequelize
+npm i --save sequelize mysql2
 ```
-> Isso irá permitir que seja possível a utilização do `sequelize-cli` para executar as migrations/seeders nos próximos passos.
+> Isso irá permitir a utilização do `sequelize-cli` (depende do mysql2) para executar as migrations/seeders nos próximos passos.
 
 2) Configurar arquivo de conexão com o Banco (`config/config.json`)
  ```JSON
@@ -84,4 +84,18 @@ npm i --save sequelize
 }
 
 ```
+> Leia o passo anterior caso não tenha armazenado o host do Aurora
+
+3) Executar as migrações (`executar via console na raiz do projeto`)
+ ```console
+npx sequelize-cli db:migrate
+```
+> Irá criar as tabelas e relacionamentos do banco dedos
+
+4) Executar os seeders (`executar via console na raiz do projeto`)
+ ```console
+npx sequelize-cli db:seed:all
+```
+> Irá inserir os grupos de acesso e perfis iniciais
+
 
