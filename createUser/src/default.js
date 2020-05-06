@@ -1,6 +1,6 @@
 myHandler = require("../index")
 
 myHandler.handler({body: {
-        username: "hectorgrecco",
+        username: "new_user",
         password: "asd123"
 }})
