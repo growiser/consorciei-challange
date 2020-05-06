@@ -123,4 +123,7 @@ Usuário temporário gerado a partir da seed visto que, para registrar novos usu
 | Username | Password | Access Group | Give Access To
 | --- | --- | --- | -- |
 | user-manager | default | User manager (ID 1) | Lambda /user
-> Com esse usuário é possível gerar outros users, e posteriormente, deletar por motivos de segurança este usuário padrão.
+> Com esse usuário é possível gerar outros users, e posteriormente, deletar por motivos de segurança, este usuário padrão.
+
+# Teste de Endpoints
+Afim de não estender demasiadamente esta documentação e por conta da alta disponibilidades de recursos oferecidos pelo [Postman](https://www.postman.com), todas as especificações/requerimentos dos endpoints estão disponibilizados no arquivo `collection.json` na raiz do projeto.
