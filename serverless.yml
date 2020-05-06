@@ -51,3 +51,27 @@ functions:
       DB_USER: ${ssm:DB_USER}
       DB_PASSWORD: ${ssm:DB_PASSWORD}
       DB_DATABASE: ${ssm:DB_DATABASE}
+      
+  login:
+    handler: login/index.handler
+    name: ${self:provider.stage}-${self:service.name}-login
+    description: Authenticate user on system.
+    timeout: 30
+    events:
+      - http:
+         path: login
+         method: post
+         cors:
+           origin: '*'
+           headers:
+             - Accept
+             - Content-Type
+         integration: lambda
+    package:
+      include:
+        - login/**
+    environment:
+      DB_HOST: ${ssm:DB_HOST}
+      DB_USER: ${ssm:DB_USER}
+      DB_PASSWORD: ${ssm:DB_PASSWORD}
+      DB_DATABASE: ${ssm:DB_DATABASE}

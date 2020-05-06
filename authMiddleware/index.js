@@ -5,23 +5,18 @@ const hlprRoute = require("./helpers/route")
 const hlprPermission = require("./helpers/permission")
 
 exports.handler = async (event, context, callback) => {
-    if(!event.methodArn) {
-       throw new Error('No Arn method founded');       
-    }
 
     // Validations and helpers
-    const route = await hlprRoute.getDestination(event.methodArn)
-    const method = await hlprRoute.getMethod(event.methodArn)
     const tokenData = await hlprToken.validateToken(event.authorizationToken)
 
     // Setting permissions if Token is valid
     if(tokenData.success) {
-        const permissions = JSON.parse(tokenData.data.access_group_id)
-        const sourceData = { route, method, permissions, arn: event.methodArn, callback, generatePolicy }
+        const permissions = tokenData.data.access_group_id
+        const sourceData = { permissions: permissions, arn: event.methodArn, callback, generatePolicy }
 
         // Verifying if the user have the permission group necessary and generating policy 
-        hlprPermission.setPermission(sourceData, "POST", "user", [1]) // Example for "user create"
-        
+        const teste =  hlprPermission.setPermission(sourceData, "POST", "user", [1]) // Example for "user create"
+
         return callback(null, { tokenData } );
         
     } else {
