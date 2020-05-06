@@ -118,7 +118,7 @@ E com isso, nossa aplicação está no ar! Essa é a mágica da [IaC](https://da
 | /user | Criar um novo usuário, inserir as informações no banco de dados | User manager (ID 1)
 
 ## Usuário Padrão
-Usuário temporário gerado a partir da seed visto que, para registrar novos usuários (`Lambda /user`), é necessário que o requisitante tenha o grupo de acesso `User manager (ID 1)`. Por isso, a partir desse usuário, é possível `realizar o login`, obter o `Token` e acessar a função para gerar novos usuários.
+Usuário temporário gerado a partir da seed. Visto que para registrar novos usuários (`Lambda /user`) é necessário que o requisitante tenha o grupo de acesso `User manager (ID 1)`, a partir desse usuário, é possível `realizar o login`, obter o `Token de acesso` e acessar a função `/user` para gerar novos usuários.
 
 | Username | Password | Access Group | Give Access To
 | --- | --- | --- | -- |
