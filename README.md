@@ -98,4 +98,14 @@ npx sequelize-cli db:seed:all
 ```
 > Irá inserir os grupos de acesso e perfis iniciais
 
+## 3. Deploy das funções lambda com Serverless
+Por fim, este passo irá realizar o deploy das funções lambda para o AWS. Dessa forma, será possível acessar os endpoints de qualquer lugar. É necessário ter instalado o [Serverless cli](https://github.com/serverless/serverless).
+
+1) Executar o deploy do Serverless (`executar via console na raiz do projeto`)
+ ```console
+sls deploy
+```
+> O serverless irá nos retornar os endpoints que foram criados. Isso pode agilizar o nosso tempo ao invés de abrirmos o painel AWS
+Esse foi o último passo para deixar a nossa aplicação no ar. 
+
 
