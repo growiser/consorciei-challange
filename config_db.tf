@@ -1,11 +1,11 @@
 variable "username" {
-  default = "main_db"
+  default = ""
 }
 
 variable "password" {
-  default = "ALPRO1asa27paADnpie"
+  default = ""
 }
 
 variable "database_name" {
-  default = "consorciei"
+  default = ""
 }
