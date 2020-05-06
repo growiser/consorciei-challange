@@ -1,7 +1,6 @@
 'use strict'
 
 const hlprToken = require("./helpers/token")
-const hlprRoute = require("./helpers/route")
 const hlprPermission = require("./helpers/permission")
 
 exports.handler = async (event, context, callback) => {
@@ -15,7 +14,7 @@ exports.handler = async (event, context, callback) => {
         const sourceData = { permissions: permissions, arn: event.methodArn, callback, generatePolicy }
 
         // Verifying if the user have the permission group necessary and generating policy 
-        const teste =  hlprPermission.setPermission(sourceData, "POST", "user", [1]) // Example for "user create"
+        await hlprPermission.setPermission(sourceData, "POST", "user", [1]) // Example for "user create"
 
         return callback(null, { tokenData } );
         
