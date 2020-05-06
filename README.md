@@ -106,6 +106,7 @@ Por fim, este passo irá realizar o deploy das funções lambda para o AWS. Dess
 sls deploy
 ```
 > O serverless irá nos retornar os endpoints que foram criados. Isso pode agilizar o nosso tempo ao invés de abrirmos o painel AWS
-Esse foi o último passo para deixar a nossa aplicação no ar. 
+
+E com isso, nossa aplicação está no ar! Essa é a mágica da [IaC](https://danieldonda.com/2018/04/17/infra-as-code-iac/). Com poucos comandos, foi possível subir uma aplicação inteiramente na Cloud! Leia abaixo mais especificações a respeito de Lambdas, grupos e acesso e outras informações.
 
 
