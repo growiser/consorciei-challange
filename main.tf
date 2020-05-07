@@ -26,7 +26,7 @@ module "aurora" {
   publicly_accessible                 = true
 
   # Access Configs
-  database_name                       = "${var.database_name}"  
+  database_name                       = "consorciei"  
   username                            = "${var.username}" 
   password                            = "${var.password}" 
 }
