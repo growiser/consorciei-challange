@@ -27,6 +27,8 @@ variable "password" {
   default = "YOUR DB PASSWORD"
 }
 
+# O campo database_name é estático e não deve ser alterado (Padrão = "consorciei")
+
 ```
  > A metodologia adotada para o armazenamento pode ser aprimorada. Entretanto, visando a segurança, é necessário que `o usuário que irá
  fazer o uso deste defina os dados de acesso do novo cluster`.
