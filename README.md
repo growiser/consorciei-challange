@@ -22,11 +22,6 @@ variable "username" {
   default = "YOUR DB USERNAME"
 }
 
-# Ex: consorciei
-variable "database_name" {
-  default = "YOUR DB NAME"
-}
-
 # Ex: ALPRO1asa27paADnpie
 variable "password" {
   default = "YOUR DB PASSWORD"
@@ -76,7 +71,7 @@ npm i --save sequelize mysql2
   "development": {
     "username": "USERNAME configurado no Terraform",
     "password": "SENHA configurado no Terraform",
-    "database": "DATABASE configurado no Terraform",
+    "database": "consorciei", 
     "host": "HOST retornado na Output Endpoint no Terraform",
     "dialect": "mysql",
     "operatorsAliases": false
@@ -84,7 +79,7 @@ npm i --save sequelize mysql2
 }
 
 ```
-> Leia o passo anterior caso não tenha armazenado o host do Aurora
+> O database é estático e definido por padrão como `consorciei`. Leia o passo anterior caso não tenha armazenado o host do Aurora
 
 3) Executar as migrações (`executar via console na raiz do projeto`)
  ```console
