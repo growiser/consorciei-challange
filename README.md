@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 Esta é a documentação da aplicação. Para que os processos de IaC ocorram, é necessário que haja a instalação do [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html), [Serverless](https://github.com/serverless/serverless), além de ter configurado em seu computador o [AWS cli](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-chap-install.html). 
 
 Gabriel Braga Costa
@@ -131,7 +129,4 @@ Afim de não estender demasiadamente esta documentação e por conta da alta dis
 A aplicação suportaria novas funcionalidades de forma escalável e organizada. Foi um desafio muito interessante no qual dediquei alguns dias de pesquisa.
 
 See you soon!
-=======
-# consorciei-challange
-Terraform, Lambda and Aurora RDS
->>>>>>> 78da1975ce014cd2fc6ad3654305ad75d9b6862d
+
